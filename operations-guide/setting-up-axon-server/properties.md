@@ -61,7 +61,7 @@
 | axoniq.axonserver.event.read-buffer-size| 32KB| Size of the buffer when reading from non-memory mapped files. (SE only)|
 | axoniq.axonserver.snapshot.max-bloom-filters-in-memory| 100| Maximum number of bloom filters to keep in memory|
 | axoniq.axonserver.snapshot.max-indexes-in-memory| 50| Maximum number of indexes to keep open in memory|
-| axoniq.axonserver.evsnapshotent.read-buffer-size| 32KB| Size of the buffer when reading from non-memory mapped files. (SE only)|
+| axoniq.axonserver.snapshot.read-buffer-size| 32KB| Size of the buffer when reading from non-memory mapped files. (SE only)|
 | axoniq.axonserver.executor-thread-count| 16| Number of threads for executing incoming gRPC requests|
 | axoniq.axonserver.command-thread| 1| Threads per client responsible for sending commands to the client.|
 | axoniq.axonserver.query-thread| 1| Threads per client responsible for sending queries to the client.|
@@ -114,6 +114,7 @@
 ## Keep alive:
 
 | Property| Default Value| Description|
+| --- | --- | ---| 
 | axoniq.axonserver.keep-alive-time | 2500| Interval at which AxonServer will send timeout messages. Set to 0 to disbable gRPC timeout checks|
 | axoniq.axonserver.keep-alive-timeout | 5000 | Timeout for keep alive messages on gRPC connections|
 | axoniq.axonserver.min-keep-alive-time| 1000 | Minimum keep alive interval accepted by this end of the gRPC connection|
@@ -121,18 +122,6 @@
 | axoniq.axonserver.client-heartbeat-check-initial-delay| 10000||
 | axoniq.axonserver.client-heartbeat-check-rate| 1000||
 | axoniq.axonserver.heartbeat.enabled| false||
-
-## Not used:
-
-| Property | Default Value| Description|
-| --- | --- | ---| 
-| axoniq.axonserver.event.number-of-segments| 5| Number of segments to keep in primary location (only for multitier storage option)|
-| axoniq.axonserver.event.flags| 0| Extra flags to consider when writing/reading events to file|
-| axoniq.axonserver.snapshot.number-of-segments| 5| Number of snapshot segments to keep in primary location (only for multitier storage option)|
-| axoniq.axonserver.snapshot.flags| 0| Extra flags to consider when writing/reading snapshots to file|
-| axoniq.axonserver.metrics-interval| 15| Expiry interval (minutes) of metrics|
-| axoniq.axonserver.replication.flags| 0| Extra flags to consider when writing/reading log entries to file|
-| axoniq.axonserver.replication.number-of-segments| 1000||
 
 ## Flow control:
 
@@ -197,3 +186,16 @@
 | axoniq.axonserver.replication.snapshot-flow-buffer| 50| Number of unconfirmed install snapshot messages that may be sent to peer.|
 | axoniq.axonserver.replication.sync-interval| 1000| Interval to check for files that can be closed.|
 | axoniq.axonserver.replication.wait-for-leader-timeout| -1| Timeout to wait for leader when requesting access to event store while leader change in progress, if not set defaults to maxElectionTimeout|
+
+## Not used:
+
+| Property | Default Value| Description|
+| --- | --- | ---| 
+| axoniq.axonserver.event.number-of-segments| 5| Number of segments to keep in primary location (only for multitier storage option)|
+| axoniq.axonserver.event.flags| 0| Extra flags to consider when writing/reading events to file|
+| axoniq.axonserver.snapshot.number-of-segments| 5| Number of snapshot segments to keep in primary location (only for multitier storage option)|
+| axoniq.axonserver.snapshot.flags| 0| Extra flags to consider when writing/reading snapshots to file|
+| axoniq.axonserver.metrics-interval| 15| Expiry interval (minutes) of metrics|
+| axoniq.axonserver.replication.flags| 0| Extra flags to consider when writing/reading log entries to file|
+| axoniq.axonserver.replication.number-of-segments| 1000||
+
