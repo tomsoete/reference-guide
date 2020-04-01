@@ -14,8 +14,8 @@
 | axoniq.axonserver.internal-port| 8224| gRPC port for communication between messing platform nodes|
 | axoniq.axonserver.tags| | Key/value pairs of tags for tag based connections for clients.|
 | axoniq.axonserver.devmode.enabled| false| SE only. Development mode (allows deleting all events from event store).|
-| axoniq.axonserver.autocluster.first| | For autocluster option, set the internal hostname of the first node in the cluster|
-| axoniq.axonserver.autocluster| | For autocluster option, defines the list of contexts to create/connect to.|
+| axoniq.axonserver.autocluster.first| | For auto cluster option, set the internal hostname of the first node in the cluster|
+| axoniq.axonserver.autocluster.contexts| | For auto cluster option, defines the list of contexts to create/connect to.|
 | axoniq.axonserver.recoveryfile| recovery.json| Start up with a recovery file to update node names in the controldb|
 | axoniq.axonserver.set-web-socket-allowed-origins| false| Set WebSocket CORS Allowed Origins|
 | axoniq.axonserver.max-message-size| 4MB| Maximum size of message to be sent to Axon Server|
