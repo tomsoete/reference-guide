@@ -73,9 +73,9 @@ public class GiftCard {
 }
 ```
 
-The above exert shows an state stored Aggregate from a 'Gift Card Service'. The numbered comments in the snippet point out Axon specifics which are explained here:
+The above excerpt shows a state stored Aggregate from a 'Gift Card Service'. The numbered comments in the snippet point out Axon specifics which are explained here:
 
-1. As the Aggregate is stored in a JPA repository, it is required to annotated the class with `@Entity`.  
+1. As the Aggregate is stored in a JPA repository, it is required to annotate the class with `@Entity`.  
 2. An Aggregate Root must declare a field that contains the Aggregate Identifier.
 
    This identifier must be initialized at the latest when the first event is published.
@@ -88,7 +88,7 @@ The above exert shows an state stored Aggregate from a 'Gift Card Service'. The 
 
 3. This Aggregate has several '[Aggregate Members](multi-entity-aggregates.md)'.
 
-   Since the Aggregate is stored as is, correct mapping of the entities should be taking into account.
+   Since the Aggregate is stored as is, correct mapping of the entities should be taken into account.
 
 4. A `@CommandHandler` annotated constructor, or differently put the 'command handling constructor'.
 
@@ -110,5 +110,5 @@ The above exert shows an state stored Aggregate from a 'Gift Card Service'. The 
 
 > **Adjusting state in Command Handlers**
 >
-> Differently from [Event Sourced Aggregates](aggregate.md), State-Stored Aggregates can pair the decision making logic and state changes in a Command Handler. There are no consequences for State-Stored Aggregates in following this paradigm as there are no Event Sourcing Handlers which drive it's state.
+> Unlike [Event Sourced Aggregates](aggregate.md), State-Stored Aggregates can pair the decision making logic and state changes in a Command Handler. There are no consequences for State-Stored Aggregates in following this paradigm as there are no Event Sourcing Handlers which drive their state.
 
