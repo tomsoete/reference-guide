@@ -4,7 +4,7 @@ Complex business logic often requires more than what an Aggregate with only an A
 
 > **State among Entities**
 >
-> A common misinterpretation of the rule that aggregates should not expose state, is that none of the entities should contain any property accessor methods. This is not the case. In fact, an aggregate will probably benefit a lot if the entities _within_ the aggregate expose state to the other entities in that same aggregate. However, is is recommended not to expose the state _outside_ of the aggregate.
+> A common misinterpretation of the rule that aggregates should not expose state, is that none of the entities should contain any property accessor methods. This is not the case. In fact, an aggregate will probably benefit a lot if the entities _within_ the aggregate expose state to the other entities in that same aggregate. However, it is recommended not to expose the state _outside_ of the aggregate.
 
 Within the 'Gift Card' domain, the `GiftCard` aggregate root was defined in [this](aggregate.md) section. Let's leverage this domain to introduce entities:
 
@@ -199,7 +199,7 @@ public class GiftCardTransaction {
 
 Two specifics are worth mentioning from the above snippet, pointed out with numbered Java comments:
 
-1. The creation of the Entity takes place in an event sourcing handler of it's parent.
+1. The creation of the Entity takes place in an event sourcing handler of its parent.
 
    It is thus not possible to have a 'command handling constructor' on the entity class as with the aggregate root.
 
